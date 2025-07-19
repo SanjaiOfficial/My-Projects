@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drink Water Reminder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💧 <span>Drink Water Reminder</span></h1>
+    <label for="interval">Choose reminder interval:</label>
+    <select id="interval">
+      <option value="1">Every 1 minute (for testing)</option>
+      <option value="20">Every 20 minutes</option>
+      <option value="30" selected>Every 30 minutes</option>
+      <option value="60">Every 1 hour</option>
+    </select>
+
+    <div class="buttons">
+      <button onclick="startReminder()">Start</button>
+      <button onclick="stopReminder()">Stop</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
