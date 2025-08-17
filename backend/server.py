@@ -143,6 +143,10 @@ async def update_task(task_id: str, task_update: TaskUpdate):
     if update_data:
         update_data['updated_at'] = datetime.utcnow()
         
+        # Convert date to string for MongoDB storage
+        if update_data.get('due_date') and hasattr(update_data['due_date'], 'isoformat'):
+            update_data['due_date'] = update_data['due_date'].isoformat()
+        
         # Set completed_at when marking as done
         if update_data.get('status') == TaskStatus.DONE:
             update_data['completed_at'] = datetime.utcnow()
