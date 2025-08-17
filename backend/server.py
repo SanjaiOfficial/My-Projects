@@ -25,6 +25,11 @@ app = FastAPI()
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Add your routes to the router instead of directly to app
+@api_router.get("/")
+async def root():
+    return {"message": "TaskFlow API is running!"}
+
 # Enums
 class TaskStatus(str, Enum):
     TODO = "todo"
