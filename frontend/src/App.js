@@ -180,33 +180,6 @@ function App() {
     };
   };
 
-  const formatDate = (dateString) => {
-    if (!dateString) return '';
-    try {
-      const date = new Date(dateString);
-      // Check if date is valid
-      if (isNaN(date.getTime())) return '';
-      return date.toLocaleDateString();
-    } catch (error) {
-      console.warn('Date formatting error:', error);
-      return '';
-    }
-  };
-
-  const isOverdue = (dueDateString) => {
-    if (!dueDateString) return false;
-    try {
-      const dueDate = new Date(dueDateString);
-      if (isNaN(dueDate.getTime())) return false;
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      return dueDate < today;
-    } catch (error) {
-      console.warn('Date validation error:', error);
-      return false;
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
