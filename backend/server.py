@@ -112,6 +112,11 @@ async def get_task(task_id: str):
 @api_router.post("/tasks", response_model=Task)
 async def create_task(task_input: TaskCreate):
     task_dict = task_input.dict()
+    
+    # Convert date to string for MongoDB storage
+    if task_dict.get('due_date'):
+        task_dict['due_date'] = task_dict['due_date'].isoformat()
+    
     task_obj = Task(**task_dict)
     
     # Enrich with category name if category_id provided
@@ -120,7 +125,12 @@ async def create_task(task_input: TaskCreate):
         if category:
             task_obj.category_name = category['name']
     
-    await db.tasks.insert_one(task_obj.dict())
+    # Convert task to dict and handle date serialization for storage
+    task_storage = task_obj.dict()
+    if task_storage.get('due_date') and hasattr(task_storage['due_date'], 'isoformat'):
+        task_storage['due_date'] = task_storage['due_date'].isoformat()
+    
+    await db.tasks.insert_one(task_storage)
     return task_obj
 
 @api_router.put("/tasks/{task_id}", response_model=Task)
