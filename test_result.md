@@ -243,4 +243,4 @@ test_plan:
 
 agent_communication:
     - agent: "main"
-    - message: "Completed comprehensive Notion-style task manager implementation with FastAPI backend and React frontend. Backend APIs tested and working. Frontend needs UI testing to verify all functionality including task CRUD, filtering, multiple views, and category management."
+    - message: "FIXED: Date formatting error reported by user. Issues resolved: 1) Moved utility functions (formatDate, isOverdue) to global scope for proper access 2) Added error handling for invalid dates 3) Fixed MongoDB date serialization by converting date objects to ISO strings. Backend and frontend both working with proper date handling."
