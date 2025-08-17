@@ -151,7 +151,19 @@ backend:
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Dashboard stats API providing task counts by status, priority, and overdue tasks"
+        - comment: "Fixed date serialization issue in MongoDB, now properly handles date fields in task creation and updates"
+
+  - task: "Date Formatting Bug Fix"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js, /app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "Fixed date formatting error by: 1) Moving formatDate and isOverdue functions to global scope 2) Adding proper error handling 3) Fixed MongoDB date serialization issue"
 
 frontend:
   - task: "React Task Manager UI"
