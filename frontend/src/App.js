@@ -167,10 +167,16 @@ function App() {
 
   const isOverdue = (dueDateString) => {
     if (!dueDateString) return false;
-    const dueDate = new Date(dueDateString);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return dueDate < today;
+    try {
+      const dueDate = new Date(dueDateString);
+      if (isNaN(dueDate.getTime())) return false;
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return dueDate < today;
+    } catch (error) {
+      console.warn('Date validation error:', error);
+      return false;
+    }
   };
 
   return (
