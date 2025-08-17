@@ -153,8 +153,16 @@ function App() {
   };
 
   const formatDate = (dateString) => {
-    if (!dateString) return null;
-    return new Date(dateString).toLocaleDateString();
+    if (!dateString) return '';
+    try {
+      const date = new Date(dateString);
+      // Check if date is valid
+      if (isNaN(date.getTime())) return '';
+      return date.toLocaleDateString();
+    } catch (error) {
+      console.warn('Date formatting error:', error);
+      return '';
+    }
   };
 
   const isOverdue = (dueDateString) => {
