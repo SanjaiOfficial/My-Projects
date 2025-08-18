@@ -105,42 +105,11 @@ export const portfolioData = {
     }
   ],
 
-  experience: [
-    {
-      id: 1,
-      title: "Backend Developer Intern",
-      company: "TechStart Solutions",
-      duration: "Jun 2024 - Present",
-      location: "Remote",
-      description: "Developing REST APIs using Spring Boot and managing PostgreSQL databases. Collaborated on microservices architecture and implemented automated testing strategies.",
-      achievements: [
-        "Built 15+ REST API endpoints for client projects",
-        "Optimized database queries reducing response time by 40%",
-        "Implemented comprehensive unit and integration tests",
-        "Mentored 2 junior interns on Spring Boot best practices"
-      ]
-    },
-    {
-      id: 2,
-      title: "Full-Stack Developer",
-      company: "College Tech Club",
-      duration: "Jan 2024 - May 2024",
-      location: "On-campus",
-      description: "Led development of college event management system. Coordinated with team of 5 developers using Git for version control and agile methodologies.",
-      achievements: [
-        "Architected full-stack application serving 500+ students",
-        "Implemented user authentication and role-based access",
-        "Managed PostgreSQL database with complex relationships",
-        "Deployed application using cloud services"
-      ]
-    }
-  ],
-
   education: [
     {
       id: 1,
       degree: "Bachelor of Technology in Computer Science",
-      institution: "National Institute of Technology",
+      institution: "Saveetha Engineering College",
       duration: "2022 - 2026",
       location: "India",
       cgpa: "8.7/10",
@@ -156,7 +125,7 @@ export const portfolioData = {
     {
       id: 2,
       degree: "Higher Secondary Certificate",
-      institution: "Delhi Public School",
+      institution: "Elite Matric Hr.Sec.School",
       duration: "2020 - 2022",
       location: "India",
       percentage: "94.2%",
