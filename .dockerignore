@@ -1,0 +1,10 @@
+target/
+!target/movies-platform-*.jar
+.mvn/wrapper/maven-wrapper.jar
+.git
+.gitignore
+README.md
+*.md
+.DS_Store
+.vscode
+.idea
